@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Buy now
+	</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+	<body style="background-color:rgb(167, 228, 155)">
+
+
+	
+	
+	<link rel="stylesheet" href="buy.css">
+	<link rel="stylesheet" href="buynow.css">	
+	
+	
+	
+
+    <div id="wrap">
+        <nav>
+            <div class="image">
+                <img src="Images\logo1.png" width="100px" height="70px">
+            </div>
+            <ul>
+             <li> <a class="active" href="home.html">Home</a></li>
+             <li><a href="type.html">Types of Tea</a></li>
+             <li> <a href="manufacture.html">Sri Lankan Tea Manufacturers</a></li>
+             <li> <a href="buy.html">Buy Now</a></li>
+             <li> <a href="contact.html">Contact</a></li>
+          
+          
+      </ul>
+  </nav>
+
+	
+
+<br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+	
+	
+		<div class="container01">
+  
+  <div class="row1">
+      <label for="TeaManufacturer" style="font-size: 20px;color: rgb(9, 104, 9);font-family: cursive;">Tea Manufacturer</label>
+    </div>
+      <select id="TeaManufacturer" name="TeaManufacturer" onchange="TeaManufacturerChanged()">
+		<option value="">Select Tea Manufacturer</option>
+        <option value="Dilmah Teas">Dilmah Teas</option>
+		<option value="Jones Tea">Jones Tea</option>
+		<option value="George Steuart Teas">George Steuart Teas</option>
+        <option value="Malwatta Valley Plantations Teas">Malwatta Valley Plantations Teas</option>
+		<option value="Prestige Ceylon Teas">Prestige Ceylon Teas</option>
+		<option value="Empire Teas">Empire Teas</option>
+      </select>
+       </div>
+  </div>
+
+
+  
+  <div class="row1">
+	<label for="TeaManufacturer" style="font-size: 20px;color: rgb(9, 104, 9);font-family: cursive;">Packaging Type</label>
+</div>
+    <select  name="Packaging Type" id="Packaging Type" onchange="PackagingTypeChanged()">
+	  <option value="">Select Packaging Type</option>
+        <option value="Paper pouches">Paper pouches</option>
+        <option value="Bags">Bags</option>
+        <option value="Tins">Tins</option>
+      </select>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="row1">
+	<label for="" style="font-size: 20px;color: rgb(9, 104, 9);font-family: cursive;">Size</label>
+    </div>
+      <select name="Size" id="Size" onchange="SizeChanged()">
+	  <option value="Select Size">Select Size</option>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+    </div>
+  </div>
+
+
+
+
+
+  
+
+  <div class="row1">
+	<label for="Extras" style="font-size: 20px;color: rgb(9, 104, 9);font-family: cursive;">Extras</label>
+    </div>
+      <select name="Extras" id="Extras" onchange="ExtrasChanged()">
+	  <option value="Select Extras">Select Extras</option>
+        <option value="Mug">Mug</option>
+        <option value="Silver Pin">Silver Pin</option>
+        <option value="Wooden souvenir">Wooden souvenir</option>
+      </select>
+    </div>
+  </div>
+
+
+
+
+
+
+  
+  
+  <div class="br">
+	<input class="btn" type="submit" value="Order Favourite" style="background-color: rgb(66, 167, 88);
+	font-size:18px;margin-top: 2px;margin-bottom: 5px;" onclick="getFromFavourite()">
+	<input class="btn" type="submit" value="Add to Favourite" style="background-color: rgb(66, 167, 88);
+	font-size:18px;margin-top: 2px;margin-bottom: 5px;"  onclick="addFavourite()"> 
+	<input class="btn" type="submit" value="Reserve" style="background-color:   rgb(66, 167, 88);font-size:18px;
+	margin-top: 2px;margin-bottom: 5px;"  onclick="reserve()">  
+	<input class="btn" type="submit" value="Add Order" style="background-color:  rgb(66, 167, 88);font-size:18px;
+	margin-top: 2px;margin-bottom: 5px;"  onclick="addOrder()">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="br">
+
+  <div class="scolumn1">
+  <h4 class="topic">Current Tea Order</h4><br>
+	  <label class = "label" for="currentTeaManufacturer" id="currentTeaManufacturer">Current Tea Manufacturer : -</label><br><br>
+	  <label class = "label" for="currentPackagingType" id="PackagingType">Packaging Type : -</label><br><br>
+	  <label class = "label" for="currentSize" id="CurrentSize">Size : -</label><br><br>
+	  <label class = "label"  for="currentExtras" id="currentExtras">Extras : 0</label><br><br>
+  </div>
+  
+  <div class="scolumn1">
+	<h4 class="topic">Overall Tea Order</h4><br>
+		<label class = "label" for="overallOrder">Order</label>
+		<label class = "label" id="lbl1">.</label><br><br>
+		<label class = "label" for="overallOrder">Overall Cost</label>
+		<label class = "label" id="lbl2"> 0 </label><br><br>
+		<label class = "label" for="overallOrder">Total To be paid</label>
+  </div>
+  
+</div>
+
+<div class="footer">
+	</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	var TeaManufacturer = '';
+	var PackagingType = 0;
+	var Size = '';
+	var Extras = '';
+	var Cost = 0;
+	function taxiTypeChanged() {
+		type = document.getElementById("TeaManufacturer").value;
+		document.getElementById("currentTeaManufacturer").innerHTML = "Current Tea Manufacturer : " + TeaManufacturer ;
+		cost();
+	}
+	function fuelEfficiencyChanged() {
+		fuelEfficiency = document.getElementById("Packaging Type").value;
+		document.getElementById("Packaging Type").innerHTML = "Packaging Type : " + PackagingType ;
+		cost();
+	}
+	function stayChanged() {
+		stay = document.getElementById("Size").value;
+		document.getElementById("current Size").innerHTML = "Size: " + Size;
+		cost();
+	}
+	function stayChanged() {
+		stay = document.getElementById("Extras").value;
+		document.getElementById("current Extras").innerHTML = "Extras: " + Extras;
+		cost();
+	}
+	
+	function cost() {
+		
+	
+ 
+
+
+		var costTeaManufacturer  = 0;
+		var costPackagingType = 0;
+		var costSize = 0;
+		var costExtras = 0;
+		
+		if(TeaManufacturer  == "Dilmah Teas") {
+			costTeaManufacturer = 1000;
+		}
+		if(TeaManufacturer  == "Jones Teas") {
+			costTeaManufacturer  = 1500;
+		}
+		if(TeaManufacturer  == "George Steuart Teas") {
+			costTeaManufacturer  = 1000;
+		}
+		if(TeaManufacturer  == "Malwatta Valley Plantations Teas") {
+			costTeaManufacturer  = 2000;
+		}
+		if(TeaManufacturer  == " Prestige Ceylon Teas") {
+			costTeaManufacturer  = 1000;
+		}
+		if(TeaManufacturer  == "  Empire Teas") {
+			costTeaManufacturer  = 2000;
+		}
+		
+
+
+
+		
+		if(PackagingType == "Paper pouches") {
+			costPackagingType = 1000;
+		}
+		if(PackagingType == "Bags") {
+			costPackagingType = 2500;
+		}
+		if(PackagingType == "Tins") {
+			costPackagingType = 5000;
+		}
+
+
+
+
+
+
+
+		if(Extras == "Mug") {
+			costExtras = 500;
+		}
+		if(Extras == "Silver pin") {
+			costExtras = 1000;
+		}
+		if(Extras == "Wooden Souvenir") {
+			costExtras = 1500;
+		}
+
+
+
+
+		
+		
+
+		if(Size == "Small") {
+			costSize = (costTeaManufacturer + costPackagingType + costExtras ) + 1000;
+		}
+		if(Size == "Medium") {
+			costSize= (costTeaManufacturer + costPackagingType+ costExtras) + 2500;
+		}
+		if(Size == "Large") {
+			costSize = (costTeaManufacturer + costPackagingType+ costExtras) + 5000;
+		}
+		
+		Cost = costSize ;
+		document.getElementById("currentCost").innerHTML = "cost of current Tea Manufacturer  : " + Cost;
+	}
+	
+	function addOrder() {
+		var currentTeaManufacturer = document.getElementById("lbl1").innerHTML;
+		var allTaxis = currentTeaManufacturer  +  TeaManufacturer + " , ";
+		document.getElementById("lbl1").innerHTML = allTaxis;
+		
+		
+		var currentTot = document.getElementById("lbl2").innerHTML;
+		var tot = parseInt(Cost) +  parseInt(currentTot);
+		document.getElementById("lbl2").innerHTML = tot;
+		
+		
+	}
+	
+	function reserve() { 
+		document.getElementById("lbl1").innerHTML = "";
+		document.getElementById("lbl2").innerHTML = "0";
+		
+		document.getElementById("currentCost").innerHTML = "cost of current Tea Manufacturer  : " ;
+		document.getElementById("Current Size").innerHTML = "Size : ";
+		document.getElementById("Packaging Type").innerHTML = "Packaging Type : ";
+		document.getElementById("Current Extras").innerHTML = "Extras : ";
+		document.getElementById("currentTaxi").innerHTML = "Current Tea Manufacturer : " ;
+		
+		alert("Reservation Successfull. Thank you.");
+	}
+	
+	function addFavourite() { 
+		localStorage.setItem("Tea Manufacturer",TeaManufacturer);
+		localStorage.setItem("Packaging Type",PackagingType);
+		localStorage.setItem("Current Extras",Extras);
+		localStorage.setItem("Current Size",Size);
+		localStorage.setItem("Cost",Cost);
+		alert(localStorage.getItem("Current Size"));
+	}
+		
+		document.getElementById("Tea Manufacturer").value = localStorage.getItem("Tea Manufacturer");
+		document.getElementById("Packaging Type").value = localStorage.getItem("Packaging Type");
+		document.getElementById("Current Size").value = localStorage.getItem("size");
+		document.getElementById("Current Extras").value = localStorage.getItem("Current Extras");
+
+	
+</script>
+
+
+
+</body>
+</html>	

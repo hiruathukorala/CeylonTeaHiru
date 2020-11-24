@@ -1,0 +1,118 @@
+
+
+
+
+body{
+
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+
+}
+
+nav{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0px 90px 5px 0px;
+  box-sizing: border-box;
+  background-color: rgb(177, 223, 186);
+
+}
+
+nav ul{
+  list-style: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+}
+
+nav ul li a {
+  line-height: 80px;
+  color: rgb(5, 5, 5);
+  padding: 12px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+nav .image{
+  padding: 22px 20px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  
+  
+}
+
+
+nav ul li a:hover {
+  background: rgb(178, 180, 180);
+  border-radius: 5px;
+
+}
+
+nav ul li a.active{
+  background: rgb(98, 99, 98);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid: 450px / auto auto auto ;
+    grid-gap:5px;
+    background-color: rgb(77, 73, 73);
+    padding: 5px;
+}
+
+.grid-container > div{
+    background-color: rgb(128, 194, 102);
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 15px;
+    width: 300px;
+    height: 420px;
+    font-family: Times New Roman;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer
+{
+left: 0;
+position: relative;
+bottom: 0;
+width: 100%;
+height: 15px;
+background-color: rgb(138, 192, 141);
+color: black;
+text-align: left;
+
+}
